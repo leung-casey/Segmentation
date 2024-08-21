@@ -1,5 +1,7 @@
 Videos/
 seg/
+mask/
+mask_figure/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

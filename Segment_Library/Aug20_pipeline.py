@@ -40,6 +40,7 @@ def frames_to_image(frames,frame_index: int):
     return image
 
 def create_mask(image):
+    torch.cuda.empty_cache()
     sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
     sam = sam.to(device)
 
@@ -90,10 +91,10 @@ def show_all_masks(masks, image, output_file):
     plt.savefig(output_file, bbox_inches='tight', pad_inches=0)
     plt.show()
 
-def length_and_width(masks, mask_index, calibration_factor):
+def length_and_width(masks, mask_index, calibration_factor, output_file):
     top_selection = 15
 
-    mask = np.ascontiguousarray(masks[mask_index]['segmentation'])
+    mask = np.ascontiguousarray(masks[mask_index])
     skeleton = skeletonize(mask)
     # Fit the dots in np.array(np.where(skeleton)) to a curve using a polynomial of degree 3
     # The curve will be the centerline of the skeleton
@@ -191,6 +192,10 @@ def length_and_width(masks, mask_index, calibration_factor):
     # plt.title('Width of the mask along the curve')
     # plt.show()
 
-    return length/calibration_factor, average_width
+    # Export length/calibration_factor, average_width to a text file, 5 sig fig, deliminated by a comma
+    with open(output_file, 'w') as f:
+        f.write(f'{length/calibration_factor:.5f},{average_width:.5f}')
+
+    f.close()
 
  
