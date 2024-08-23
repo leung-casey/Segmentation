@@ -120,7 +120,7 @@ def length_and_width(masks, mask_index, calibration_factor, output_file):
 
     length = 0
     for i in range(len(x)-1):
-        if mask[int(y[i]), int(x[i])]:
+        if mask[int(x[i]),int(y[i])]:
             length += math.sqrt((x[i+1]-x[i])**2 + (y[i+1]-y[i])**2)   
 
     #  On each point of the curve, draw the normal line and find the intersection with the mask
@@ -155,12 +155,12 @@ def length_and_width(masks, mask_index, calibration_factor, output_file):
         # Initialize the width
         width = 0
         # Move along the normal vector until the mask is reached
-        while mask[int(p[0]), int(p[1])]:
+        while mask[int(p[1]), int(p[0])]:
             p += n
             width += 1
         # Move along the normal vector in the opposite direction until the mask is reached
         p = np.array([y[i], x[i]])
-        while mask[int(p[0]), int(p[1])]:
+        while mask[int(p[1]), int(p[0])]:
             p -= n
             width += 1
         widths.append(width)

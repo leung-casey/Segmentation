@@ -2,6 +2,8 @@ Videos/
 seg/
 mask/
 mask_figure/
+mask_day0/
+mask_figure_day0/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

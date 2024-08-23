@@ -1,5 +1,3 @@
-# Makefile
-
 # Variables
 PYTHON = python3
 
@@ -9,44 +7,13 @@ PYTHON = python3
 # Target to run the Python script
 
 segmentation:
-	$(PYTHON) Locate.py 'Videos/MVI_6477.MP4' 'mask/calibration.npy' 'mask_figure/calibration.png' 0
-
-	$(PYTHON) Locate.py 'Videos/MVI_6478.MP4' 'mask/worm1.npy' 'mask_figure/worm1.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6479.MP4' 'mask/worm2.npy' 'mask_figure/worm2.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6480.MP4' 'mask/worm3.npy' 'mask_figure/worm3.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6481.MP4' 'mask/worm4.npy' 'mask_figure/worm4.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6482.MP4' 'mask/worm5.npy' 'mask_figure/worm5.png' 0
-
-	$(PYTHON) Locate.py 'Videos/MVI_6483.MP4' 'mask/worm6.npy' 'mask_figure/worm6.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6484.MP4' 'mask/worm7.npy' 'mask_figure/worm7.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6485.MP4' 'mask/worm8.npy' 'mask_figure/worm8.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6486.MP4' 'mask/worm9.npy' 'mask_figure/worm9.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6487.MP4' 'mask/worm10.npy' 'mask_figure/worm10.png' 0
-
-	$(PYTHON) Locate.py 'Videos/MVI_6488.MP4' 'mask/worm11.npy' 'mask_figure/worm11.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6489.MP4' 'mask/worm12.npy' 'mask_figure/worm12.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6490.MP4' 'mask/worm13.npy' 'mask_figure/worm13.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6491.MP4' 'mask/worm14.npy' 'mask_figure/worm14.png' 0
-	$(PYTHON) Locate.py 'Videos/MVI_6492.MP4' 'mask/worm15.npy' 'mask_figure/worm15.png' 0
+	$(PYTHON) Locate.py 'Videos/MVI_6495.MP4' 'mask/wormz1.npy' 'mask_figure/worm1.png' 50
+	$(PYTHON) Locate.py 'Videos/MVI_6498.MP4' 'mask/wormz2.npy' 'mask_figure/worm2.png' 50
+	$(PYTHON) Locate.py 'Videos/MVI_6499.MP4' 'mask/wormz3.npy' 'mask_figure/worm3.png' 50
 
 measurement:
-	$(PYTHON) Measure.py 'mask/worm1.npy' 'measurement/worm1.txt' 13.0643 26
-	$(PYTHON) Measure.py 'mask/worm2.npy' 'measurement/worm2.txt' 13.0643 25
-	$(PYTHON) Measure.py 'mask/worm3.npy' 'measurement/worm3.txt' 13.0643 18
-	$(PYTHON) Measure.py 'mask/worm4.npy' 'measurement/worm4.txt' 13.0643 8
-	$(PYTHON) Measure.py 'mask/worm5.npy' 'measurement/worm5.txt' 13.0643 31
 
-	$(PYTHON) Measure.py 'mask/worm6.npy' 'measurement/worm6.txt' 13.0643 26
-	$(PYTHON) Measure.py 'mask/worm7.npy' 'measurement/worm7.txt' 13.0643 5
-	$(PYTHON) Measure.py 'mask/worm8.npy' 'measurement/worm8.txt' 13.0643 0
-	$(PYTHON) Measure.py 'mask/worm9.npy' 'measurement/worm9.txt' 13.0643 14
-	$(PYTHON) Measure.py 'mask/worm10.npy' 'measurement/worm10.txt' 13.0643 19
-
-	$(PYTHON) Measure.py 'mask/worm11.npy' 'measurement/worm11.txt' 13.0643 15
-	$(PYTHON) Measure.py 'mask/worm12.npy' 'measurement/worm12.txt' 13.0643 17
-	$(PYTHON) Measure.py 'mask/worm13.npy' 'measurement/worm13.txt' 13.0643 14
-	$(PYTHON) Measure.py 'mask/worm14.npy' 'measurement/worm14.txt' 13.0643 21
-	$(PYTHON) Measure.py 'mask/worm15.npy' 'measurement/worm15.txt' 13.0643 16
+	$(PYTHON) Measure.py 'mask/worm2.npy' 'measurement/wormz2.txt' 13.0643 5
 
 
 # Target to clean up compiled Python files and other artifacts
