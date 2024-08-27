@@ -91,6 +91,7 @@ def show_all_masks(masks, image, output_file):
     plt.savefig(output_file, bbox_inches='tight', pad_inches=0)
     plt.show()
 
+# THIS IS THE POLYNOMIAL FITTING
 def length_and_width(masks, mask_index, calibration_factor, output_file):
     top_selection = 15
 
